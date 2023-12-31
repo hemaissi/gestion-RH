@@ -1,0 +1,64 @@
+
+{% extends 'paste.html' %}
+{% block content%}
+<div class="container">
+<h2>Gestion des ressources humaines</h2>
+<table border="1">
+    <tr>
+        <th>Nom</th>
+        <th>Code postal</th>
+    </tr>
+    {% for item in allC %}
+        <tr>
+            <td>{{ item.nom_com }}</td>
+            <td>{{ item.codep_com }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<br>
+
+<table border="1">
+    <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Date de naissance</th>
+        <th>Adresse</th>
+    </tr>
+    {% for item in allE %}
+        <tr>
+            <td>{{ item.nom_emp }}</td>
+            <td>{{ item.preno_emp }}</td>
+            <td>{{ item.daten_emp }}</td>
+            <td>{{ item.adre_emp }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<br>
+
+<table border="1">
+    <tr>
+        <th>Nom du service</th>
+    </tr>
+    {% for item in allS %}
+        <tr>
+            <td>{{ item.nom_ser }}</td>
+        </tr>
+    {% endfor %}
+</table><br/>
+<div class="p-t-20">
+    <a href="{% url 'index' %}"><button class="btn btn--radius btn--green" type="submit" 
+    style="background-color: #4CAF50; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    padding: 10px 20px; /* Espacement intérieur */
+    text-align: center; /* Alignement du texte */
+    text-decoration: none; /* Style de soulignement du texte */
+    display: inline-block; /* Affichage en ligne */
+    font-size: 16px; /* Taille de la police */
+    border-radius: 5px; /* Rayon des coins */
+    cursor: pointer; /* Curseur au survol */
+    border: none; /* Suppression de la bordure par défaut */">Home</button></a>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,83 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+  <div class="wrapper wrapper--w680">
+      <div class="card card-1">
+          <div class="card-heading"></div>
+          <div class="card-body">
+              <h2 class="title">Registration Info</h2>
+              <form method="POST" action="{% url 'join' %}">
+                {% csrf_token %}
+                
+                  <div class="input-group">
+                      <input class="input--style-1" type="text" placeholder="FIRST NAME" id="nom_emp" name="nom_emp">
+                  </div>
+                  <div class="input-group">
+                    <input class="input--style-1" type="text" placeholder="LAST NAME" id="preno_emp" name="preno_emp">
+                </div>
+                <div class="input-group">
+                  <input class="input--style-1" type="text" placeholder="ADRESS" id="adre_emp" name="adre_emp">
+              </div>
+                  <div class="row row-space">
+                      <div class="col-2">
+                          <div class="input-group">
+                              <input class="input--style-1 js-datepicker" type="text" placeholder="BIRTHDATE" id="daten_emp" name="daten_emp">
+                              <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                          </div>
+                      </div>
+                      <div class="col-2">
+                          <div class="input-group">
+                              <div class="rs-select2 js-select-simple select--no-search">
+                                  <select name="gender">
+                                      <option disabled="disabled" selected="selected">GENDER</option>
+                                      <option>Male</option>
+                                      <option>Female</option>
+                                  </select>
+                                  <div class="select-dropdown"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="input-group">
+                      <div class="rs-select2 js-select-simple select--no-search">
+                          <select name="class">
+                              <option disabled="disabled" selected="selected">SERVICE</option>
+                              <option>Marketing</option>
+                              <option>Informatique</option>
+                              <option>Devops</option>
+                          </select>
+                          <div class="select-dropdown"></div>
+                      </div>
+                  </div>
+                  
+                  <div class="row row-space">
+                      <div class="col-2">
+                          <div class="input-group">
+                              <input class="input--style-1" type="text" placeholder="ZIP CODE" name="res_code">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="p-t-20">
+                      <button class="btn btn--radius btn--green" type="submit">Submit</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Jquery JS-->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<!-- Vendor JS-->
+<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<script src="{% static 'vendor/datepicker/moment.min.js' %}"></script>
+<script src="{% static 'vendor/datepicker/daterangepicker.js' %}"></script>
+
+<!-- Main JS-->
+<script src="{% static 'js/global.js' %}"></script>
+
+
+
+{% endblock %}    
