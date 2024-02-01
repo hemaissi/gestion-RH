@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Set up your environment if needed
-                    bat "python manage.py runserver"
+                    sh "python manage.py runserver"
                 }
             }
         }
